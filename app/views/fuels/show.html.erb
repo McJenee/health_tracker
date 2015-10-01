@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Calorie:</strong>
+  <%= @fuel.calorie %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @fuel.date %>
+</p>
+
+<p>
+  <strong>Food:</strong>
+  <%= @fuel.food %>
+</p>
+
+<p>
+  <strong>Meal type:</strong>
+  <%= @fuel.meal_type %>
+</p>
+
+<%= link_to 'Edit', edit_fuel_path(@fuel) %> |
+<%= link_to 'Back', fuels_path %>
