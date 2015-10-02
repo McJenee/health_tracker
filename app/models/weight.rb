@@ -1,5 +1,5 @@
 class Weight < ActiveRecord::Base
-  validates :date, presence: true, uniqueness: true
+  validates :date, uniqueness: true
 
   def daily_weight
 

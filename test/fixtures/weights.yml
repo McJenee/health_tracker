@@ -4,8 +4,13 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one:
+  weight: 100
+  date: 2015-10-01
+
 # column: value
 #
-two: {}
+two:
+  weight: 185
+  date: 2015-11-28
 #  column: value
