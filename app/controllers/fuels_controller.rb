@@ -2,13 +2,11 @@ class FuelsController < ApplicationController
   before_action :set_fuel, only: [:show, :edit, :update, :destroy]
 
   # GET /fuels
-  # GET /fuels.json
   def index
     @fuels = Fuel.all
   end
 
   # GET /fuels/1
-  # GET /fuels/1.json
   def show
   end
 
@@ -22,42 +20,34 @@ class FuelsController < ApplicationController
   end
 
   # POST /fuels
-  # POST /fuels.json
   def create
     @fuel = Fuel.new(fuel_params)
 
     respond_to do |format|
       if @fuel.save
         format.html { redirect_to @fuel, notice: 'Fuel was successfully created.' }
-        format.json { render :show, status: :created, location: @fuel }
       else
         format.html { render :new }
-        format.json { render json: @fuel.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PATCH/PUT /fuels/1
-  # PATCH/PUT /fuels/1.json
   def update
     respond_to do |format|
       if @fuel.update(fuel_params)
         format.html { redirect_to @fuel, notice: 'Fuel was successfully updated.' }
-        format.json { render :show, status: :ok, location: @fuel }
       else
         format.html { render :edit }
-        format.json { render json: @fuel.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /fuels/1
-  # DELETE /fuels/1.json
   def destroy
     @fuel.destroy
     respond_to do |format|
       format.html { redirect_to fuels_url, notice: 'Fuel was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

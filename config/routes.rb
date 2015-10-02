@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :fuels
   resources :exercise_types
   resources :exercises
+  resources :weights
+  root 'dashboard#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
