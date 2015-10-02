@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: endurance
 
 two:
-  name: MyString
+  name: strength
+
+three:
+  name: flexibility
+
+four:
+  name: balance
