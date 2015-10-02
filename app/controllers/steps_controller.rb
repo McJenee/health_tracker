@@ -3,7 +3,7 @@ class StepsController < ApplicationController
 
 
 
-  hello
+  # hello
   # GET /steps
   def index
     @steps = Step.all
