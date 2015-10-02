@@ -21,7 +21,7 @@ class StepsControllerTest < ActionController::TestCase
       post :create, step: { calorie: @step.calorie, date: @step.date, food: @step.food, meal_type: @step.meal_type }
     end
 
-    assert_redirected_to fuel_path(assigns(:step))
+    assert_redirected_to step_path(assigns(:step))
   end
 
   test "should show step" do
@@ -36,7 +36,7 @@ class StepsControllerTest < ActionController::TestCase
 
   test "should update step" do
     patch :update, id: @step, step: { calorie: @step.calorie, date: @step.date, food: @step.food, meal_type: @step.meal_type }
-    assert_redirected_to fuel_path(assigns(:step))
+    assert_redirected_to step_path(assigns(:step))
   end
 
   test "should destroy step" do

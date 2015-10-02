@@ -1,5 +1,5 @@
 class StepsController < ApplicationController
-  before_action :set_fuel, only: [:show, :edit, :update, :destroy]
+  before_action :set_steps, only: [:show, :edit, :update, :destroy]
 
 
 

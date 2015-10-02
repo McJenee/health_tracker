@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 20151001214119) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "steps", force: :cascade do |t|
+    t.integer  "step"
+    t.date     "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "weights", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,9 +1,8 @@
+require 'byebug'
+
 class FuelsController < ApplicationController
   before_action :set_fuel, only: [:show, :edit, :update, :destroy]
 
-
-
-  hello
   # GET /fuels
   def index
     @fuels = Fuel.all
