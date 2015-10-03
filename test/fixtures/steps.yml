@@ -1,13 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: endurance
+  step: 1
+  date: 2015-10-01
 
 two:
-  name: strength
-
-three:
-  name: flexibility
-
-four:
-  name: balance
+  step: 1
+  date: 2015-10-01
