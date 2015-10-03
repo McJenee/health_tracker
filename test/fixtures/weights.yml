@@ -5,7 +5,7 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  weight: 100
+  weight: 175
   date: 2015-10-01
 
 # column: value

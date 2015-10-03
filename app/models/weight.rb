@@ -4,4 +4,8 @@ class Weight < ActiveRecord::Base
   def daily_weight
 
   end
+
+  def self.average_weight
+    self.all.sum(:weight) / self.count
+  end
 end
