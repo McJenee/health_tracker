@@ -22,7 +22,6 @@ class WeightsController < ApplicationController
   # POST /weights
   def create
     @weight = Weight.new(weight_params)
-
     respond_to do |format|
       if @weight.save
         format.html { redirect_to @weight, notice: 'Weight was successfully created.' }

@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class WeightTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "date validation" do
+    a = Weight.create!(date: 2015-10-03)
+    b = Weight.new()
+    assert a.date
+    assert b.save
+  end
 end
