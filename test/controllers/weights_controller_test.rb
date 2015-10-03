@@ -18,6 +18,7 @@ class WeightsControllerTest < ActionController::TestCase
 
   test "should create weight" do
     assert_difference('Weight.count') do
+      @weight.date = Time.now.strftime("%Y-%m-%d")
       post :create, weight: { weight: @weight.weight, date: @weight.date }
     end
 

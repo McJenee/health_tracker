@@ -1,13 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  exercise_type_id: 1
-  burn: 1
+endurance:
+  exercise_type_id: one
+  burn: 350
   date: 2015-10-01
-  time_spent: 1
+  time_spent: 60
 
-two:
-  exercise_type_id: 1
-  burn: 1
+strength:
+  exercise_type_id: 2
+  burn: 200
   date: 2015-10-01
-  time_spent: 1
+  time_spent: 50
+
+flexibility:
+  exercise_type_id: 3
+  burn: 250
+  date: 2015-10-01
+  time_spent: 45
+
+balance:
+  exercise_type_id: 4
+  burn: 185
+  date: 2015-10-01
+  time_spent: 35
