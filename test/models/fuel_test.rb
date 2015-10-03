@@ -15,6 +15,7 @@ class FuelTest < ActiveSupport::TestCase
     b2 = Exercise.create!(burn: 60, date: 2015-10-02)
 
     assert net_calories = "490"
+  end
 
   test "total calories consumed" do
     Fuel.create(calorie: 2000, meal_type: "Dinner")
