@@ -1,11 +1,8 @@
 class Fuel < ActiveRecord::Base
 
-  def number_of_calories # need to work on this
-    today = date.today
-    @net_fuel = @self.today - @burn
+  def net_calories # need to work on this
+    today = Time.now.strftime("%Y-%m-%d")
+    @net_fuel = @self.today - @burn.today
   end
-  #
-  # def calories_burned
-  #
-  # end
+  
 end
