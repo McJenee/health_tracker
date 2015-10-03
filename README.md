@@ -7,7 +7,9 @@ An app that will track your weight, caloric intake and exercise routine to help 
 Initial scope should just be a working dashboard that shows a breakdown of all data in the system.  A list of these items might include:
 
 Basic
-- Total calories consumed
+X Dashboard must link to all list pages.
+- Dashboard should show net calories for the day.
+X Total calories consumed
 - Total calories burned
 - Total steps taken
 - Average weight
@@ -19,7 +21,7 @@ Basic
 - Average caloric burn over the last 7 days
 - Daily steps over the last 7 days
 - Average daily steps over the last 7 days
-- Today's net calories
+X Today's net calories
 - Total net calories
 - Include steps in caloric burn (maybe automate the addition of daily steps as a daily exercise entry)
 X Associations and validations for requirements

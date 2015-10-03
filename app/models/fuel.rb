@@ -1,10 +1,7 @@
 class Fuel < ActiveRecord::Base
 
-  # def number_of_calories # need to work on this
-  #   net_fuel = Fuel.new - calories burned through exercise
-  # end
-  #
-  # def calories_burned
-  #
-  # end
+  def self.calories
+    self.all.reduce(0) { |s, c| s + c.calorie }
+  end
+
 end
