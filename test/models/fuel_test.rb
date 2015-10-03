@@ -1,8 +1,7 @@
 require 'test_helper'
 
 class FuelTest < ActiveSupport::TestCase
-  test "calories consumed" do
-    fuel = Fuel.create!(calorie: "200")
+  test "the truth" do
     assert true
   end
 
@@ -16,5 +15,10 @@ class FuelTest < ActiveSupport::TestCase
     b2 = Exercise.create!(burn: 60, date: 2015-10-02)
 
     assert net_calories = "490"
+
+  test "total calories consumed" do
+    Fuel.create(calorie: 2000, meal_type: "Dinner")
+    Fuel.create(calorie: 500, meal_type: "Snack")
+    assert_equal Fuel.calories, 2502
   end
 end
