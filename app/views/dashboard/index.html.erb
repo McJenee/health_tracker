@@ -13,4 +13,17 @@
     Average Weight for the current week:
     <%= @avg_weight_week %>
   </p>
+  <p>
+    7 day summary of calories consumed:
+  </p>
+  <table>
+    <% x = 0 %>
+    <% while x < 7 do %>
+      <tr>
+        <td><%= Date.today - x.days %></td>
+        <td><%= Fuel.daily_calories(x) %></td>
+            <% x += 1 %>
+      </tr>
+    <% end %>
+  </table>
 <p>Developed by the McJeneee organization.</p>

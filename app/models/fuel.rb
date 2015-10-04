@@ -15,4 +15,13 @@ class Fuel < ActiveRecord::Base
     end
   end
 
+  def self.daily_calories(date)
+    today = Date.today - date.days
+    if Fuel.count == 0 || Exercise.count == 0
+      "No data to calculate"
+    else
+      fuel = Fuel.where(date: today).sum(:calorie)
+    end
+  end
+
 end
