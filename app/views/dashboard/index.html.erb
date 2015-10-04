@@ -5,41 +5,128 @@
 <%= link_to "Steps.", steps_path %>
 <h1>Welcome to Dashboard</h1>
 
-<h3>Today's summary:</h3>
-  <p>
+<h3>Lifetime summary:</h3>
+<p>
   Net Calories:
   <%= @net_calories_today %>
-  </p>
-  <p>
-    Average Weight for the current week:
-    <%= @avg_weight_week %>
-  </p>
-
-  <p>
-    7 day summary of calories consumed:
-  </p>
-  <table>
-    <% x = 0 %>
-    <% while x < 7 do %>
-      <tr>
-        <td><%= Date.today - x.days %></td>
-        <td><%= Fuel.daily_calories(x) %></td>
-            <% x += 1 %>
-      </tr>
-    <% end %>
-  </table>
+</p>
 <p>
-  7 day weight summary:
+  Total caloric intake:
+  <%= Fuel.calories %>
+</p>
+<p>
+  Total calories burned:
+  <%= %>
+</p>
+<p>
+  Total steps:
+  <%= %>
+</p>
+<p>
+  Exercise breakdown:
+  <%= %>
+</p>
+<p>
+  Average weight:
+  <%= @avg_weight %>
+</p>
+
+<h3>Today's summary:</h3>
+<p>
+  Net calories:
+  <%= %>
+</p>
+<p>
+  Caloric intake:
+  <%= %>
+</p>
+<p>
+  Calories burned:
+  <%= %>
+</p>
+<p>
+  Steps taken:
+  <%= %>
+</p>
+<p>
+  Exercise breakdown:
+  <%= %>
+</p>
+<p>
+  Weight:
+  <%= %>
+</p>
+
+<h3>Week summary:</h3>
+<p>
+  Net calories this week:
+  <%= %>
+</p>
+<p>
+  Calories consumed this week:
+  <%= %>
+</p>
+<p>
+  Calories burned this week:
+  <%= %>
+</p>
+<p>
+  Steps taken this week:
+  <%= %>
+</p>
+<p>
+  Average Weight for the current week:
+  <%= @avg_weight_week %>
+</p>
+<p>
+  7 day summary of calories consumed:
 </p>
 <table>
+  <th>Date</th>
+  <th>Calories consumed</th>
   <% x = 0 %>
   <% while x < 7 do %>
-    <tr>
-      <td><%= Date.today - x.days %></td>
-      <td><%= Weight.daily_weight_week(x) %></td>
-          <% x += 1 %>
-    </tr>
+  <tr>
+    <td><%= Date.today - x.days %></td>
+    <td><%= Fuel.daily_calories(x) %></td>
+    <% x += 1 %>
+  </tr>
   <% end %>
 </table>
-
+<table>
+  <th>Date</th>
+  <th>Calories burned</th>
+  <% x = 0 %>
+  <% while x < 7 do %>
+  <tr>
+    <td><%= Date.today - x.days %></td>
+    <td><%= Fuel.daily_calories(x) %></td>
+    <% x += 1 %>
+  </tr>
+  <% end %>
+</table>
+<table>
+  <th>Date</th>
+  <th>Weight</th>
+  <% x = 0 %>
+  <% while x < 7 do %>
+  <tr>
+    <td><%= Date.today - x.days %></td>
+    <td><%= Fuel.daily_calories(x) %></td>
+    <% x += 1 %>
+  </tr>
+  <% end %>
+</table>
+<table>
+  <th>Date</th>
+  <th>Steps taken</th>
+  <% x = 0 %>
+  <% while x < 7 do %>
+  <tr>
+    <td><%= Date.today - x.days %></td>
+    <td><%= Fuel.daily_calories(x) %></td>
+    <% x += 1 %>
+  </tr>
+  <% end %>
+</table>
 <p>Developed by the McJeneee organization.</p>
