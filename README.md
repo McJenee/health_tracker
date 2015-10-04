@@ -11,7 +11,7 @@ X Dashboard must link to all list pages.
 - Dashboard should show net calories for the day.
 X Total calories consumed
 - Total calories burned
-- Total steps taken
+X Total steps taken
 - Average weight
 - Daily weight entries over the last 7 days
 - Average weight for the last 7 days
