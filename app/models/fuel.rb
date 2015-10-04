@@ -4,12 +4,12 @@ class Fuel < ActiveRecord::Base
     self.all.reduce(0) { |s, c| s + c.calorie }
   end
 
-  def self.net_calories_
+  def self.net_calories_today
     today = Date.today
     if Fuel.count == 0 || Exercise.count == 0
       "No data to calculate"
     else
-      fuel = Fuel.where(date: today).sum(:calories)
+      fuel = Fuel.where(date: today).sum(:calorie)
       burn = Exercise.where(date: today).sum(:burn)
       fuel - burn
     end
@@ -21,6 +21,15 @@ class Fuel < ActiveRecord::Base
       "No data to calculate"
     else
       fuel = Fuel.where(date: today).sum(:calorie)
+    end
+  end
+
+  def self.average_fuel_week
+    week = self.where(date: (Date.today - 7.days)..Date.today)
+    if week.count == 0
+      "No data"
+    else
+      week.sum(:fuel) / week.count
     end
   end
 

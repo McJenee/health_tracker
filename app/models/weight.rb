@@ -1,10 +1,6 @@
 class Weight < ActiveRecord::Base
   validates :date, uniqueness: true
 
-  def daily_weight
-
-  end
-
   def self.average_weight
     self.all.sum(:weight) / self.count
   end
@@ -17,4 +13,15 @@ class Weight < ActiveRecord::Base
       week.sum(:weight) / week.count
     end
   end
+
+  def self.daily_weight_week(date)
+    today = Date.today - date.days
+    if Weight.count == 0
+      "No data to calculate"
+    else
+      weight = Weight.where(date: today).sum(:weight)
+    end
+  end
+
+
 end
