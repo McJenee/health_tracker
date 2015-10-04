@@ -4,12 +4,15 @@
 <%= link_to "Exercises.", exercises_path %>
 <%= link_to "Steps.", steps_path %>
 <h1>Welcome to Dashboard</h1>
-<p>
-  <h3>Today's summary:</h3>
+
+<h3>Today's summary:</h3>
   <p>
   Net Calories:
-    <%= @today.net_calories %>
+  <%= @net_calories_today %>
   </p>
-</p>
-
+  <p>
+    Average Weight for the current week:
+    <%= @avg_weight_week %>
+  </p>
+>>>>>>> origin/mcjosh
 <p>Developed by the McJeneee organization.</p>

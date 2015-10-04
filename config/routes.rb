@@ -2,10 +2,9 @@ Rails.application.routes.draw do
   resources :fuels
   resources :exercise_types
   resources :exercises
-
   resources :steps
-
   resources :weights
+
   root 'dashboard#index'
   get 'dashboard/show'
 

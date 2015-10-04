@@ -13,8 +13,11 @@ X Total calories consumed
 - Total calories burned
 X Total steps taken
 - Average weight
+X Total calories burned
+X Total steps taken
+X Average weight
 - Daily weight entries over the last 7 days
-- Average weight for the last 7 days
+X Average weight for the last 7 days
 - Daily caloric intake over the last 7 days
 - Average caloric intake over the last 7 days
 - Daily caloric burn over the last 7 days
