@@ -5,6 +5,8 @@ class DashboardController < ApplicationController
 
     @net_calories_today = Fuel.net_calories_today
 
+    @avg_weight = Weight.average_weight
+
   end
 
   def show

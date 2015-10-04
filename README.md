@@ -19,6 +19,7 @@ X Average weight
 X Daily weight entries over the last 7 days
 X Average weight for the last 7 days
 X Daily caloric intake over the last 7 days
+
 X Average caloric intake over the last 7 days
 X Daily caloric burn over the last 7 days
 X Average caloric burn over the last 7 days
@@ -32,18 +33,3 @@ X Associations and validations for requirements
 Advanced
 - Create different views for day, week, month and year.
 - Make it pretty
-
-
-
-
-
-- app\assets\controllers\weights_controller.rb
-- app\views\weights\_form.html.erb
-                   \edit.html.erb
-                   \index.html.erb
-                   \new.html.erb
-                   \show.html.erb
-- test\controllers\weights_controller_test.rb
-- app\assets\javascripts\weights.coffee
-- app\assets\stylesheets\weights.scss
-- app\helpers\weights_helper.rb
