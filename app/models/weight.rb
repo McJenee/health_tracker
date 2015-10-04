@@ -11,6 +11,10 @@ class Weight < ActiveRecord::Base
 
   def self.average_weight_week
     week = self.where(date: (Date.today - 7.days)..Date.today)
-    week.sum(:weight) / week.count
+    if week.count == 0
+      "No data"
+    else
+      week.sum(:weight) / week.count
+    end
   end
 end

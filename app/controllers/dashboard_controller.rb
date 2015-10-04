@@ -1,10 +1,8 @@
 class DashboardController < ApplicationController
 
   def index
-    @fuels = Fuel.all
-    @exercises = Exercise.all
-    @weights = Weight.all
-    @steps = Step.all
+    @avg_weight_week = Weight.average_weight_week
+    @net_calories_today = Fuel.net_calories_today
   end
 
   def show
