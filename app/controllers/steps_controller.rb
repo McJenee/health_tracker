@@ -24,7 +24,7 @@ class StepsController < ApplicationController
 
   # POST /steps
   def create
-    @step = Step.new(fuel_params)
+    @step = Step.new(step_params)
 
     respond_to do |format|
       if @step.save
@@ -38,7 +38,7 @@ class StepsController < ApplicationController
   # PATCH/PUT /steps/1
   def update
     respond_to do |format|
-      if @step.update(fuel_params)
+      if @step.update(step_params)
         format.html { redirect_to @step, notice: 'Step was successfully updated.' }
       else
         format.html { render :edit }
@@ -50,18 +50,18 @@ class StepsController < ApplicationController
   def destroy
     @step.destroy
     respond_to do |format|
-      format.html { redirect_to fuels_url, notice: 'Step was successfully destroyed.' }
+      format.html { redirect_to steps_url, notice: 'Step was successfully destroyed.' }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_fuel
+    def set_steps
       @step = Step.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def fuel_params
-      params.require(:step).permit(:calorie, :date, :food, :meal_type)
+    def step_params
+      params.require(:step).permit(:step, :date)
     end
 end

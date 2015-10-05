@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @steps.each do |fuel| %>
+    <% @steps.each do |step| %>
       <tr>
         <td><%= step.step %></td>
         <td><%= step.date %></td>
@@ -27,3 +27,4 @@
 <br>
 
 <%= link_to 'New Step', new_step_path %>
+<%= link_to 'Back to Dashboard', root_path %>
