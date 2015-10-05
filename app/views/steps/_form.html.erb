@@ -12,16 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :calorie %><br>
-    <%= f.number_field :calorie %>
-  </div>
-  <div class="field">
     <%= f.label :step %><br>
     <%= f.text_field :step %>
   </div>
   <div class="field">
     <%= f.label :date %><br>
-    <%= f.date_select_field :date %>
+    <%= f.date_select :date %>
   </div>
   <div class="actions">
     <%= f.submit %>

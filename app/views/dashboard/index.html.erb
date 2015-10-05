@@ -8,24 +8,21 @@
 <h3>Lifetime summary:</h3>
 <p>
   Net Calories:
-  <%= @net_calories_today %>
+  <%= @net_calories %>
 </p>
 <p>
   Total caloric intake:
-  <%= Fuel.calories %>
+  <%=  @total_calories %>
 </p>
 <p>
   Total calories burned:
-  <%= %>
+  <%= @total_burned %>
 </p>
 <p>
   Total steps:
-  <%= %>
+  <%= @total_step %>
 </p>
-<p>
-  Exercise breakdown:
-  <%= %>
-</p>
+
 <p>
   Average weight:
   <%= @avg_weight %>
@@ -34,45 +31,42 @@
 <h3>Today's summary:</h3>
 <p>
   Net calories:
-  <%= %>
+  <%= @net_calories_today %>
 </p>
 <p>
   Caloric intake:
-  <%= %>
+  <%= @today_cal %>
 </p>
 <p>
   Calories burned:
-  <%= %>
+  <%= @today_burn %>
 </p>
 <p>
   Steps taken:
-  <%= %>
+  <%= @today_step %>
 </p>
-<p>
-  Exercise breakdown:
-  <%= %>
-</p>
+
 <p>
   Weight:
-  <%= %>
+  <%= @today_weight %>
 </p>
 
 <h3>Week summary:</h3>
 <p>
   Net calories this week:
-  <%= %>
+  <%= @weekly_net_cals %>
 </p>
 <p>
   Calories consumed this week:
-  <%= %>
+  <%= @weekly_cal %>
 </p>
 <p>
   Calories burned this week:
-  <%= %>
+  <%= @weekly_burn %>
 </p>
 <p>
   Steps taken this week:
-  <%= %>
+  <%=  @weekly_step %>
 </p>
 <p>
   Average Weight for the current week:
@@ -88,7 +82,7 @@
   <% while x < 7 do %>
   <tr>
     <td><%= Date.today - x.days %></td>
-    <td><%= Fuel.daily_calories(x) %></td>
+    <td><%= Fuel.daily_calories_week(x) %></td>
     <% x += 1 %>
   </tr>
   <% end %>
@@ -100,7 +94,7 @@
   <% while x < 7 do %>
   <tr>
     <td><%= Date.today - x.days %></td>
-    <td><%= Fuel.daily_calories(x) %></td>
+    <td><%= Exercise.daily_burn_week(x) %></td>
     <% x += 1 %>
   </tr>
   <% end %>
@@ -112,7 +106,7 @@
   <% while x < 7 do %>
   <tr>
     <td><%= Date.today - x.days %></td>
-    <td><%= Fuel.daily_calories(x) %></td>
+    <td><%= Weight.daily_weight_week(x) %></td>
     <% x += 1 %>
   </tr>
   <% end %>
@@ -124,7 +118,7 @@
   <% while x < 7 do %>
   <tr>
     <td><%= Date.today - x.days %></td>
-    <td><%= Fuel.daily_calories(x) %></td>
+    <td><%= Step.daily_steps_week(x) %></td>
     <% x += 1 %>
   </tr>
   <% end %>

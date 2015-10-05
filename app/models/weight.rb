@@ -22,6 +22,21 @@ class Weight < ActiveRecord::Base
       weight = Weight.where(date: today).sum(:weight)
     end
   end
+  def self.daily_weight
+    if Weight.count == 0
+      "No data to calculate"
+    else
+      weight = Weight.where(date: Date.today).sum(:weight)
+    end
+  end
 
+  def self.total_weight_week
+    weight_week = Weight.where(date: (Date.today - 7.days)..Date.today)
+    if Weight.count == 0
+      "No data to calculate"
+    else
+      weight_week.sum(:weight)
+    end
+  end
 
 end
