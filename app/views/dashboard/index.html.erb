@@ -1,126 +1,175 @@
-<img src="/assets/logo.jpg"></img>
-<%= link_to "Weights.", weights_path %>
-<%= link_to "Fuels.", fuels_path %>
-<%= link_to "Exercises.", exercises_path %>
-<%= link_to "Steps.", steps_path %>
-<h1>Welcome to Dashboard</h1>
+<div id="container">
+  <div id="navbar">
+    <img id="logo" src="/assets/logo.jpg"/>
+    <ul id="nav">
+      Navigate to:
+      <li><%= link_to "Weights.", weights_path %></li>
+      <li><%= link_to "Fuels.", fuels_path %></li>
+      <li><%= link_to "Exercises.", exercises_path %></li>
+      <li><%= link_to "Steps.", steps_path %></li>
+    </ul>
+    <h1>Your Dashboard</h1>
+  </div>
 
-<h3>Lifetime summary:</h3>
-<p>
-  Net Calories:
-  <%= @net_calories %>
-</p>
-<p>
-  Total caloric intake:
-  <%=  @total_calories %>
-</p>
-<p>
-  Total calories burned:
-  <%= @total_burned %>
-</p>
-<p>
-  Total steps:
-  <%= @total_step %>
-</p>
+  <div id="content">
+    <div class="clear">
+    <h2>Summaries</h2>
+  </div>
+    <div class="summary">
+      <h3>Lifetime summary:</h3>
+      <p>
+        Net Calories:
+        <%= @net_calories %>
+      </p>
+      <p>
+        Total caloric intake:
+        <%= @total_calories %>
+      </p>
+      <p>
+        Total calories burned:
+        <%= @total_burned %>
+      </p>
+      <p>
+        Total steps:
+        <%= @total_step %>
+      </p>
+      <p>
+        Average weight:
+        <%= @avg_weight %>
+      </p>
+    </div>
 
-<p>
-  Average weight:
-  <%= @avg_weight %>
-</p>
+    <div class="summary">
+      <h3>Today's summary:</h3>
+      <p>
+        Net calories:
+        <%= @net_calories_today %>
+      </p>
+      <p>
+        Caloric intake:
+        <%= @today_cal %>
+      </p>
+      <p>
+        Calories burned:
+        <%= @today_burn %>
+      </p>
+      <p>
+        Steps taken:
+        <%= @today_step %>
+      </p>
+      <p>
+        Weight:
+        <%= @today_weight %>
+      </p>
+    </div>
 
-<h3>Today's summary:</h3>
-<p>
-  Net calories:
-  <%= @net_calories_today %>
-</p>
-<p>
-  Caloric intake:
-  <%= @today_cal %>
-</p>
-<p>
-  Calories burned:
-  <%= @today_burn %>
-</p>
-<p>
-  Steps taken:
-  <%= @today_step %>
-</p>
+    <div class="summary">
+      <h3>Week summary:</h3>
+      <p>
+        Net calories this week:
+        <%= @weekly_net_cals %>
+      </p>
+      <p>
+        Calories consumed this week:
+        <%= @weekly_cal %>
+      </p>
+      <p>
+        Calories burned this week:
+        <%= @weekly_burn %>
+      </p>
+      <p>
+        Steps taken this week:
+        <%= @weekly_step %>
+      </p>
+      <p>
+        Average Weight for the current week:
+        <%= @avg_weight_week %>
+      </p>
+    </div>
 
-<p>
-  Weight:
-  <%= @today_weight %>
-</p>
+    <div class="clear">
+      <h2>Weekly charts</h2>
+    </div>
 
-<h3>Week summary:</h3>
-<p>
-  Net calories this week:
-  <%= @weekly_net_cals %>
-</p>
-<p>
-  Calories consumed this week:
-  <%= @weekly_cal %>
-</p>
-<p>
-  Calories burned this week:
-  <%= @weekly_burn %>
-</p>
-<p>
-  Steps taken this week:
-  <%=  @weekly_step %>
-</p>
-<p>
-  Average Weight for the current week:
-  <%= @avg_weight_week %>
-</p>
-<p>
-  7 day summary of calories consumed:
-</p>
-<table>
-  <th>Date</th>
-  <th>Calories consumed</th>
-  <% x = 0 %>
-  <% while x < 7 do %>
-  <tr>
-    <td><%= Date.today - x.days %></td>
-    <td><%= Fuel.daily_calories_week(x) %></td>
-    <% x += 1 %>
-  </tr>
-  <% end %>
-</table>
-<table>
-  <th>Date</th>
-  <th>Calories burned</th>
-  <% x = 0 %>
-  <% while x < 7 do %>
-  <tr>
-    <td><%= Date.today - x.days %></td>
-    <td><%= Exercise.daily_burn_week(x) %></td>
-    <% x += 1 %>
-  </tr>
-  <% end %>
-</table>
-<table>
-  <th>Date</th>
-  <th>Weight</th>
-  <% x = 0 %>
-  <% while x < 7 do %>
-  <tr>
-    <td><%= Date.today - x.days %></td>
-    <td><%= Weight.daily_weight_week(x) %></td>
-    <% x += 1 %>
-  </tr>
-  <% end %>
-</table>
-<table>
-  <th>Date</th>
-  <th>Steps taken</th>
-  <% x = 0 %>
-  <% while x < 7 do %>
-  <tr>
-    <td><%= Date.today - x.days %></td>
-    <td><%= Step.daily_steps_week(x) %></td>
-    <% x += 1 %>
-  </tr>
-  <% end %>
-</table>
-<p>Developed by the McJeneee organization.</p>
+    <div class="chart">
+      <table>
+        <tr>
+          <th colspan="2">Intake</th>
+        </tr>
+        <tr>
+          <td>Date</td>
+          <td>Calories</td>
+        </tr>
+        <% x = 0 %>
+        <% while x < 7 do %>
+        <tr>
+          <td><%= Date.today - x.days %></td>
+          <td><%= Fuel.daily_calories_week(x) %></td>
+          <% x += 1 %>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+
+    <div class="chart">
+      <table>
+        <tr>
+          <th colspan="2">Burn</th>
+        </tr>
+        <tr>
+          <td>Date</td>
+          <td>Calories</td>
+        </tr>
+        <% x = 0 %>
+        <% while x < 7 do %>
+        <tr>
+          <td><%= Date.today - x.days %></td>
+          <td><%= Exercise.daily_burn_week(x) %></td>
+          <% x += 1 %>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="chart">
+      <table><tr>
+        <th colspan="2">Weight</th>
+      </tr>
+      <tr>
+        <td>Date</td>
+        <td>Pounds</td>
+      </tr>
+        <% x = 0 %>
+        <% while x < 7 do %>
+        <tr>
+          <td><%= Date.today - x.days %></td>
+          <td><%= Weight.daily_weight_week(x) %></td>
+          <% x += 1 %>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="chart">
+      <table><tr>
+        <th colspan="2">Steps</th>
+      </tr>
+      <tr>
+        <td>Date</td>
+        <td>Count</td>
+      </tr>
+        <% x = 0 %>
+        <% while x < 7 do %>
+        <tr>
+          <td><%= Date.today - x.days %></td>
+          <td><%= Step.daily_steps_week(x) %></td>
+          <% x += 1 %>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+    </div>
+    <div class="clear"/>
+    <div id="tag">
+    <p>Developed by the McJeneee organization.</p>
+  </div>
+  </div>
+</div>

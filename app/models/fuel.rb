@@ -4,6 +4,12 @@ class Fuel < ActiveRecord::Base
     Fuel.all.reduce(0) { |s, c| s + c.calorie }
   end
 
+  def self.net_calories
+    c = Fuel.all.reduce(0) { |s, c| s + c.calorie }
+    b = Exercise.all.reduce(0) { |s, c| s + c.burn }
+    c - b
+  end
+
   def self.net_calories_today
     today = Date.today
     if Fuel.count == 0 || Exercise.count == 0
